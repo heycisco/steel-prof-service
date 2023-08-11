@@ -1,0 +1,123 @@
+@import 'defs/fonts';
+@import 'defs/nullstyle';
+@import 'schemes/main-theme';
+@import 'defs/defs';
+
+.logo-area {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	padding: 0.5em;
+	img {
+		width: 360px;
+		height: auto;
+	}
+}
+
+.main-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	font-size: 120%;
+	.title-main {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+		font-size: 150%;
+		line-height: 1.2;
+		h1 {
+			margin-bottom: 0.3em;
+		}
+		margin-bottom: 1em;
+	}
+	.homepage-group {
+		background: var(--c-main-2);
+		padding: 1em;
+		border-radius: 3px;
+		box-shadow: 0px 8px 20px #00000063;
+		color: #ffffff;
+		margin-bottom: 2em;
+		p {
+			margin-bottom: 0.5em;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.examples-main {
+			display: flex;
+			gap: 0.5em;
+			flex-direction: column;
+			@media (--big) {
+				flex-direction: row;
+			}
+			.item {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border-radius: 3px;
+				overflow: hidden;
+				position: relative;
+				flex: 1 1 100%;
+				@media (--big) {
+					flex: 1 1 30%;
+				}
+				p {
+					position: absolute;
+					text-transform: uppercase;
+					font-size: 1.3em;
+					width: 100%;
+					padding: 0.5em;
+					text-shadow: -1px 1px 1px #00000075;
+					background: #00000042;
+					top: 0;
+					@media (--big) {
+						font-size: 1em;
+					}
+				}
+			}
+		}
+	}
+	.btn-call {
+		padding: 1em 2em;
+		text-transform: uppercase;
+		margin-top: 1em;
+		font-weight: 700;
+		background: var(--c-brand);
+		color: var(--c-second-1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0px 8px 20px #00000063;
+		border-radius: 3px;
+		&:hover {
+			color: var(--c-second-1);
+		}
+		svg {
+			height: 1.6em;
+			width: auto;
+			margin-right: 1em;
+		}
+		&-caption {
+			font-size: 80%;
+			text-align: center;
+			margin-top: 0.5em;
+		}
+	}
+}
+
+.page-404 {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	a {
+		color: var(--c-brand);
+		border-top: 1px solid;
+		text-transform: uppercase;
+		display: block;
+	}
+}
