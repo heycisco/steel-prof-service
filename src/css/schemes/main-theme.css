@@ -16,7 +16,7 @@
 	--c-light: #00000026;
 	--shadow-color: #0022334d;
 	--border-radius: 0.85rem;
-	--border-radius-light: 0.25rem;
+	--border-radius-light: 3px;
 
 	/* Accent colors */
 	--c-green: #37d73a;

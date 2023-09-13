@@ -3,17 +3,48 @@
 @import 'schemes/main-theme';
 @import 'defs/defs';
 
-.logo-area {
+.main-header {
 	display: flex;
-	justify-content: center;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 2;
-	padding: 0.5em;
-	img {
-		width: 360px;
-		height: auto;
+	gap: var(--grid-gutter);
+	align-items: flex-end;
+	flex-wrap: wrap;
+	> * {
+		flex: 1 1 100%;
+		@media (--big) {
+			flex: 1 1 30%;
+		}
+	}
+	&__logo {
+		display: flex;
+		justify-content: center;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		padding: 0.5em;
+		img {
+			width: 360px;
+			height: auto;
+		}
+	}
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+		text-transform: uppercase;
+		color: var(--c-main-2);
+		align-items: center;
+		@media (--big) {
+			align-items: flex-end;
+		}
+		a {
+			display: flex;
+			align-items: center;
+			gap: 0.35em;
+		}
+		img {
+			width: 1.2em;
+			height: auto;
+		}
 	}
 }
 
@@ -32,11 +63,15 @@
 			margin-bottom: 0.3em;
 		}
 		margin-bottom: 1em;
+		&.page {
+			text-align: center;
+			margin-top: 1em;
+		}
 	}
 	.homepage-group {
 		background: var(--c-main-2);
 		padding: 1em;
-		border-radius: 3px;
+		border-radius: var(--border-radius-light);
 		box-shadow: 0px 8px 20px #00000063;
 		color: #ffffff;
 		margin-bottom: 2em;
@@ -58,10 +93,24 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				border-radius: 3px;
+				border-radius: var(--border-radius-light);
 				overflow: hidden;
 				position: relative;
 				flex: 1 1 100%;
+				picture {
+					display: flex;
+				}
+				&:after {
+					content: 'Подробнее';
+					position: * 0 0 0 absolute;
+					font-size: 0.85em;
+					text-align: right;
+					padding: 0.25em 0.5em;
+					background: #ffffff21;
+					color: var(--c-main-1);
+					backdrop-filter: blur(3px);
+					text-transform: uppercase;
+				}
 				@media (--big) {
 					flex: 1 1 30%;
 				}
@@ -72,7 +121,8 @@
 					width: 100%;
 					padding: 0.5em;
 					text-shadow: -1px 1px 1px #00000075;
-					background: #00000042;
+					background: #0000002c;
+					backdrop-filter: blur(2px);
 					top: 0;
 					@media (--big) {
 						font-size: 1em;
@@ -107,8 +157,32 @@
 			margin-top: 0.5em;
 		}
 	}
+	.images-group {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		picture {
+			border-radius: var(--border-radius-light);
+			overflow: hidden;
+			width: 100%;
+			display: flex;
+			max-width: 800px;
+			> * {
+				size: 100%;
+				object-fit: cover;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
 }
-
+.navigation-sub {
+	text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+	 margin-top: 1em;
+}
 .page-404 {
 	width: 100%;
 	display: flex;
